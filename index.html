@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff">
-<title>Try the Look 鈥� Runway</title>
+<link rel="icon" href="data:,">
+<title>Try the Look — Runway</title>
 <meta name="description" content="Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece.">
 <link rel="preload" as="image" href="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp" fetchpriority="high">
 <style>
@@ -79,7 +80,7 @@ runway-section{display:block;position:relative;-webkit-font-smoothing:antialiase
 .pin:hover i,.pin.hot i{transform:scale(1.3);background:#0e0e0e;color:#fff}@keyframes pinin{from{transform:scale(0);opacity:0}}
 .pin::after{content:attr(data-tip);position:absolute;left:calc(100% - 6px);top:50%;transform:translate(-8px,-50%) scale(.96);transform-origin:left;white-space:nowrap;padding:7px 12px;border-radius:999px;background:rgb(255 255 255/.88);backdrop-filter:blur(10px);font-size:11px;font-weight:500;line-height:1;box-shadow:0 10px 26px -12px rgb(0 0 0/.4);opacity:0;transition:opacity .35s,transform .6s var(--ease);pointer-events:none}
 .pin:hover::after,.pin.hot::after{opacity:1;transform:translate(0,-50%)}
-dialog{border:1px solid #d9d9d9;background:#fff;color:#151413;padding:24px;width:min(560px,100vw - 32px);max-height:85dvh}dialog::backdrop{background:#0005;backdrop-filter:blur(4px)}
+dialog{margin:auto;border:1px solid #d9d9d9;background:#fff;color:#151413;padding:24px;width:min(560px,100vw - 32px);max-height:85dvh}dialog::backdrop{background:#0005;backdrop-filter:blur(4px)}
 .bh{display:flex;justify-content:space-between;align-items:center;gap:20px}.bh h2{font-size:25px;font-weight:400;margin:0}.bh button{font-size:28px;width:44px;height:44px;background:none;border:0}
 .bn2{font-size:12px;color:#666;line-height:1.5}.row{display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid #ddd}
 .row img{width:60px;height:80px;object-fit:contain}.row h3{font-size:14px;font-weight:400;margin:0 0 8px}.row p{font-size:12px;margin:0 0 6px}.row a{font-size:12px;text-decoration:underline;text-underline-offset:3px}
@@ -99,15 +100,15 @@ dialog{border:1px solid #d9d9d9;background:#fff;color:#151413;padding:24px;width
 <a href="./" class="brand" aria-label="Runway home"><img src="https://reel-ref-try-the-look.vercel.app/assets/nike-logo.svg" width="68" height="24" alt="Nike"></a>
 <nav aria-label="Main navigation"><a href="./">Home</a><a href="https://nike-makknzjs.myshopify.com/pages/nike-orbit" target="_blank" rel="noopener noreferrer">Nike Orbit</a><a href="https://nike-makknzjs.myshopify.com/pages/scene-rail" target="_blank" rel="noopener noreferrer">Hand Rail Pro</a><a href="./" aria-current="page">Runway</a></nav>
 <button id="open-bag" aria-label="Open styling bag"><svg width="22" height="24" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2"/></svg><span data-cart-count>0</span></button>
-</header>
+</header><noscript><p style='padding:20px;text-align:center'>This runway needs JavaScript to load the looks.</p></noscript>
 <main><runway-section id="Runway-template--28035983671601__the_runway_wdM8BG" class="rw rw--popup" data-speed="5000" data-autoplay="true"></runway-section></main>
-<dialog id="bag-dialog"><div class="bh"><h2>Your styling bag</h2><button id="close-bag" aria-label="Close styling bag">脳</button></div>
+<dialog id="bag-dialog"><div class="bh"><h2>Your styling bag</h2><button id="close-bag" aria-label="Close styling bag">×</button></div>
 <p class="bn2">A local outfit shortlist. No payment or order is collected here. Open a piece on the original demo to continue.</p>
 <div id="bag-items"></div><p id="bag-total"></p><button id="export-bag">Download outfit shortlist</button></dialog>
 <div id="bag-status" role="status" aria-live="polite"></div>
 <script>
 const A='https://reel-ref-try-the-look.vercel.app/assets/',S='https://nike-makknzjs.myshopify.com/products/';
-const shoe=[40,41,42,43,44,45,46],app=['S','L','M','XL'],V='Nikey | Password: 1';
+const shoe=[40,41,42,43,44,45,46],app=['S','M','L','XL'],V='Nike';
 const P={
  aj:{n:'Air Jordan 12 Retro',v:V,p:149,i:'source-tatum-5-orbit-copy',u:'tatum-5-orbit-copy',s:shoe,l:'Shoe size',h:400,ids:[57015167025457,57015167058225,57015167090993,57015167123761,57015167156529,57015167189297,57015167222065]},
  ts:{n:'Tshirt',v:'Nike',p:199,i:'source-tshirt',u:'tshirt',s:app,l:'Size',h:563,ids:[56835911582001,56835911614769,56835911647537,56835911680305]},
@@ -120,10 +121,10 @@ const P={
 const L=[
  {n:'The City Edit',m:1,o:1,k:'bndthK',it:['aj','ts','sw'],pin:[[47,27],[48,58],[45,96]]},
  {n:'Gallery Opening',m:5,o:5,k:'XckgG6',it:['t5','hb','ts'],tag:1,pin:[[50,28],[48,58],[45,88]]},
- {n:'Gallery Opening',m:4,o:4,k:'rLfAhC',it:['sp','t5','ts'],tag:1,pin:[[50,28],[48,58],[45,88]]},
+ {n:'Gallery Opening II',m:4,o:4,k:'rLfAhC',it:['sp','t5','ts'],tag:1,pin:[[50,28],[48,58],[45,88]]},
  {n:'Studio Day',m:6,o:6,k:'FKg67q',it:['hb','aj','ts'],pin:[[50,28],[48,58],[45,88]]},
- {n:'Studio Day',m:3,o:3,k:'8KREEE',it:['sw','t5','ts'],pin:[[50,28],[48,58],[45,88]]},
- {n:'Studio Day',m:2,o:2,k:'N3bfm9',it:['ho','lk','ts'],pin:[[50,28],[48,58],[45,88]]}];
+ {n:'Studio Day II',m:3,o:3,k:'8KREEE',it:['sw','t5','ts'],pin:[[50,28],[48,58],[45,88]]},
+ {n:'Studio Day III',m:2,o:2,k:'N3bfm9',it:['ho','lk','ts'],pin:[[50,28],[48,58],[45,88]]}];
 const N=6,TOT=12,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)];
 const mod=(a,n)=>((a%n)+n)%n,money=n=>'$'+n.toFixed(2);
@@ -136,35 +137,34 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(bag))}catch(e){}$$('
 function addBag(items){for(const it of items){if(!vmap[it.id])throw Error('Please choose an available size.');const e=bag.find(x=>x.id===it.id);if(e)e.quantity=Math.min(20,e.quantity+1);else bag.push({id:it.id,quantity:1})}save();toast(items.length>1?'Look saved to your styling bag':'Piece saved to your styling bag')}
 function renderBag(){const box=$('#bag-items');box.innerHTML='';if(!bag.length)box.innerHTML='<p class="bn2">Your styling bag is empty. Choose a size beside a piece to save it.</p>';
  let tot=0;bag.forEach(e=>{const m=vmap[e.id],p=P[m.k];tot+=p.p*e.quantity;const r=document.createElement('div');r.className='row';
- r.innerHTML=`<img src="${A+p.i}.webp" alt="${p.n}"><div><h3>${p.n}</h3><p>Size ${m.size} 路 Quantity ${e.quantity} 路 ${money(p.p)}</p><a href="${S+p.u}" target="_blank" rel="noopener noreferrer">View original piece 鈫�</a></div><button aria-label="Remove ${p.n}">脳</button>`;
+ r.innerHTML=`<img src="${A+p.i}.webp" alt="${p.n}"><div><h3>${p.n}</h3><p>Size ${m.size} · Quantity ${e.quantity} · ${money(p.p)}</p><a href="${S+p.u}" target="_blank" rel="noopener noreferrer">View original piece ↗</a></div><button aria-label="Remove ${p.n}">×</button>`;
  r.querySelector('button').onclick=()=>{bag=bag.filter(x=>x!==e);save()};box.append(r)});
  $('#bag-total').textContent=bag.length?'Reference subtotal '+money(tot):'';$('#export-bag').disabled=!bag.length}
 $('#open-bag').onclick=()=>{renderBag();$('#bag-dialog').showModal()};$('#close-bag').onclick=()=>$('#bag-dialog').close();
 $('#bag-dialog').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.currentTarget.close()});
-$('#export-bag').onclick=()=>{const lines=bag.map(e=>{const m=vmap[e.id],p=P[m.k];return`${p.n} 路 Size ${m.size} 路 Quantity ${e.quantity}\n${S+p.u}`});
- const t=['RUNWAY 鈥� STYLING SHORTLIST','Reference prices; no order or payment has been placed.','',...lines].join('\n\n');
+$('#export-bag').onclick=()=>{const lines=bag.map(e=>{const m=vmap[e.id],p=P[m.k];return`${p.n} · Size ${m.size} · Quantity ${e.quantity}\n${S+p.u}`});
+ const t=['RUNWAY — STYLING SHORTLIST','Reference prices; no order or payment has been placed.','',...lines].join('\n\n');
  const u=URL.createObjectURL(new Blob([t],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='runway-outfit-shortlist.txt';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
 /* ---- section ---- */
 class RunwaySection extends HTMLElement{
 connectedCallback(){this.build();this.init()}
-img(l,lazy){const m=A+'model-'+l.m+'-640.webp';return`<img src="${m}" srcset="${m} 640w, ${A}original-look-${l.o}.webp 1080w" sizes="(min-width:1800px) 540px,(min-width:750px) 420px,320px" loading="${lazy?'lazy':'eager'}" decoding="async" width="1100" height="1956" draggable="false" alt="${l.n}">`}
+img(l,lazy){const m=A+'model-'+l.m+'-640.webp';return`<img onerror="this.style.opacity=0" src="${m}" srcset="${m} 640w, ${A}original-look-${l.o}.webp 1080w" sizes="(min-width:1800px) 540px,(min-width:750px) 420px,320px" loading="${lazy?'lazy':'eager'}" decoding="async" width="1100" height="1956" draggable="false" alt="${l.n}">`}
 build(){
  const ticks=L.map((l,i)=>`<button class="tick" data-tick="${i}" aria-current="${i==0}" aria-label="Look ${i+1}: ${l.n}"><span class="bar"></span><span class="tl">0${i+1}<span class="tn">&nbsp;&nbsp;${l.n}</span></span></button>`).join('');
  const actors=L.map((l,i)=>`<div class="model" data-i="${i}"><span class="shadow"></span><div class="fig">${this.img(l)}<button class="hit" data-go="${i}" aria-label="Look ${i+1}: ${l.n}" tabindex="-1"></button></div></div>`).join('');
  const panels=L.map((l,i)=>{const rows=l.it.map((id,j)=>{const p=P[id],n=j+1,pid=`Picker-template--28035983671601__the_runway_wdM8BG-look_${l.k}-${n}`;
   return`<li class="item" data-card="${n}" style="--i:${n}" data-id="${id}">${l.tag&&j==1?'<span class="tag">New</span>':''}<a class="media" href="${S+p.u}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="${A+p.i}.webp" width="400" height="${p.h}" loading="lazy" decoding="async" alt=""><span class="num">${n}</span></a>
   <div class="info"><span class="type">${p.v}</span><a class="name" href="${S+p.u}" target="_blank" rel="noopener noreferrer">${p.n}</a><span class="price"><span>${money(p.p)}</span></span></div>
-  <button class="add" data-add aria-expanded="false" aria-controls="${pid}" aria-label="Add to bag: ${p.n}"><svg class="pl" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 4v16M4 12h16"/></svg><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12.5l5 5L19.5 7"/></svg></button>
-  </li>`}).join('');
-return`<div class="lp${i==0?' in':''}" data-panel="${i}" ${i?'hidden':''}><ul class="items" role="list">${rows}</ul><div class="bundle"><p class="msg" data-msg role="status" aria-live="polite" hidden></p><div class="brow"><div><span class="bt">Complete the look</span><span class="bn">Bundle all 3 and save 10%</span></div><div class="bp"><s>$547.00</s><strong>$492.30</strong></div></div>
-  <button class="cta" data-all><span class="add2">Add full look to bag</span><span class="m">Add full look 鈥� $492.30</span><span class="done">Full look in your bag</span></button></div></div>`}).join('');
+  <button class="add" data-add aria-expanded="false" aria-controls="${pid}" aria-label="Add to bag: ${p.n}"><svg class="pl" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 4v16M4 12h16"/></svg><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12.5l5 5L19.5 7"/></svg></button></li>`}).join('');
+  return`<div class="lp${i==0?' in':''}" data-panel="${i}" ${i?'hidden':''}><ul class="items" role="list">${rows}</ul><div class="bundle"><p class="msg" data-msg role="status" aria-live="polite" hidden></p><div class="brow"><div><span class="bt">Complete the look</span><span class="bn">Bundle all 3 and save 10%</span></div><div class="bp"><s>$547.00</s><strong>$492.30</strong></div></div>
+  <button class="cta" data-all><span class="add2">Add full look to bag</span><span class="m">Add full look — $492.30</span><span class="done">Full look in your bag</span></button></div></div>`}).join('');
  this.innerHTML=`<div class="sticky"><div class="grid"><div class="left"><div class="head"><h2 class="title">Try the Look.</h2><p class="sub">Six looks, styled head to toe. Tap a pin to see the piece.</p><span class="sr" aria-live="polite" aria-atomic="true" data-live></span></div>
- <div class="stage" data-stage tabindex="0" role="region" aria-roledescription="carousel" aria-label="Try the Look. 鈥� use arrow keys or swipe to change look"><div data-actors style="position:absolute;inset:0">${actors}</div></div>
+ <div class="stage" data-stage tabindex="0" role="region" aria-roledescription="carousel" aria-label="Try the Look. — use arrow keys or swipe to change look"><div data-actors style="position:absolute;inset:0">${actors}</div></div>
  <div class="controls"><button class="icon p" data-prev aria-label="Previous look"><svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M25 7H1M7 1L1 7l6 6"/></svg></button>
  <div class="ticks">${ticks}</div>
  <button class="icon" data-auto aria-pressed="false" aria-label="Autoplay"><svg class="pp play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg><svg class="pp pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 4.5h3.5v15H6.5zM14 4.5h3.5v15H14z"/></svg></button>
  <button class="icon" data-next aria-label="Next look"><svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h24M19 1l6 6-6 6"/></svg></button></div>
- <div class="lb" data-lb aria-hidden="true"><div class="lbs" data-lbs></div><div class="lbtop"><p style="margin:0"><span class="kick" data-kick></span><span class="lname" data-lname></span></p><button class="lbx" data-close aria-label="Close">脳</button></div><p class="hint">Tap a dot to shop the piece</p></div></div>
+ <div class="lb" data-lb aria-hidden="true"><div class="lbs" data-lbs></div><div class="lbtop"><p style="margin:0"><span class="kick" data-kick></span><span class="lname" data-lname></span></p><button class="lbx" data-close aria-label="Close">×</button></div><p class="hint">Tap a dot to shop the piece</p></div></div>
  <aside class="panel"><div class="ph"><h3>In this look</h3><span class="lab">3 pieces</span></div>${panels}</aside></div></div>`;
  const act=$('[data-actors]',this);L.slice(0,N).forEach((l,i)=>{const c=$('.model[data-i="'+i+'"]',act).cloneNode(true);c.dataset.i=i+N;c.setAttribute('aria-hidden','true');$$('img',c).forEach(x=>x.loading='lazy');act.append(c)});
 },
@@ -211,7 +211,7 @@ init(){
  const card=e=>e.closest('.item');
  const togglePicker=c=>{let pk=$('.picker',c);const btn=$('[data-add]',c);if(pk){pk.remove();c.classList.remove('picking');btn.setAttribute('aria-expanded','false');return}
   const p=P[c.dataset.id];pk=document.createElement('div');pk.className='picker';pk.id=btn.getAttribute('aria-controls');
-  pk.innerHTML=`<fieldset><legend>${p.l}</legend><div class="vals">${p.s.map((s,j)=>`<label class="pill"><input type="radio" name="o-${pk.id}" value="${p.ids[j]}" ${j==0?'checked':''}><span>${s}</span></label>`).join('')}</div></fieldset><button class="confirm" data-confirm>Add to bag<span class="sr"> 鈥� ${p.n}</span></button>`;
+  pk.innerHTML=`<fieldset><legend>${p.l}</legend><div class="vals">${p.s.map((s,j)=>`<label class="pill"><input type="radio" name="o-${pk.id}" value="${p.ids[j]}" ${j==0?'checked':''}><span>${s}</span></label>`).join('')}</div></fieldset><button class="confirm" data-confirm>Add to bag<span class="sr"> — ${p.n}</span></button>`;
   c.append(pk);c.classList.add('picking');btn.setAttribute('aria-expanded','true');$('input:checked',pk).focus({preventScroll:true});
   pk.addEventListener('change',()=>{c.dataset.touched='1';engage()})};
  const markAdded=c=>{c.classList.add('added');c.classList.remove('picking');$('.picker',c)?.remove();const b=$('[data-add]',c);b.setAttribute('aria-label','Added to bag: '+P[c.dataset.id].n);b.removeAttribute('aria-expanded');
@@ -219,7 +219,7 @@ init(){
  const selected=c=>{const r=$('.picker input:checked',c);return r?+r.value:null};
  const addAll=pn=>{if(pn.classList.contains('complete'))return;const msg=$('[data-msg]',pn);msg.hidden=true;msg.textContent='';
   const pend=$$('.item',pn).filter(c=>!c.classList.contains('added')),ready=pend.filter(c=>c.dataset.touched&&selected(c)),wait=pend.filter(c=>!ready.includes(c));
-  if(ready.length){try{addBag(ready.map(c=>({id:selected(c),quantity:1})));ready.forEach(markAdded)}catch(e){msg.textContent='Couldn鈥檛 add to bag. Please try again.';msg.hidden=false;return}}
+  if(ready.length){try{addBag(ready.map(c=>({id:selected(c),quantity:1})));ready.forEach(markAdded)}catch(e){msg.textContent='Couldn’t add to bag. Please try again.';msg.hidden=false;return}}
   if(wait.length){wait.forEach(c=>{if(!$('.picker',c))togglePicker(c)});wait[0].scrollIntoView({behavior:rm?'auto':'smooth',block:'nearest'});
    msg.textContent='Pick a size for: '+wait.map(c=>P[c.dataset.id].n).join(', ');msg.hidden=false}};
  /* clicks */
@@ -232,7 +232,7 @@ init(){
   if(t.closest('[data-auto]')){if(!playing)engaged=false;return play(!playing)}
   const g=t.closest('[data-go]');if(g){const k=Math.round(mod(+g.dataset.go-Math.round(target)+TOT/2,TOT)-TOT/2);const ki=mod(+g.dataset.go,N)-index;
    const d=mod(+g.closest('.model').dataset.i-Math.round(target)+TOT/2,TOT)-TOT/2;if(d!==0&&Math.abs(d)<6)return moveTo(Math.round(target)+d);return openLb()}
-  if(t.closest('[data-confirm]')){const c=card(t);c.dataset.touched='1';try{addBag([{id:selected(c),quantity:1}]);markAdded(c)}catch(er){$('[data-msg]',c.closest('.lp')).textContent='Couldn鈥檛 add to bag. Please try again.';$('[data-msg]',c.closest('.lp')).hidden=false}return}
+  if(t.closest('[data-confirm]')){const c=card(t);c.dataset.touched='1';try{addBag([{id:selected(c),quantity:1}]);markAdded(c)}catch(er){$('[data-msg]',c.closest('.lp')).textContent='Couldn’t add to bag. Please try again.';$('[data-msg]',c.closest('.lp')).hidden=false}return}
   if(t.closest('[data-add]')){const c=card(t);if(!c.classList.contains('added'))togglePicker(c);return}
   if(t.closest('[data-all]'))return addAll(t.closest('.lp'))});
  $s.addEventListener('click',e=>{if(e.target.closest('.panel'))engage()},true);
@@ -259,5 +259,6 @@ init(){
  measure();setIndex(0,true);$$('.tick',$s)[0].setAttribute('aria-current','true');kick();
  if(!rm)play(this.dataset.autoplay==='true');save();
 }}
+document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.style.opacity='0';e.target.alt='Image unavailable';}},true);
 customElements.define('runway-section',RunwaySection);
 </script></body></html>
