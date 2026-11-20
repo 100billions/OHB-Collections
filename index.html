@@ -177,12 +177,12 @@ build(){
  <div class="lb" data-lb aria-hidden="true"><div class="lbs" data-lbs></div><div class="lbtop"><p style="margin:0"><span class="kick" data-kick></span><span class="lname" data-lname></span></p><button class="lbx" data-close aria-label="Close">×</button></div><p class="hint">Tap a dot to shop the piece</p></div></div>
  <aside class="panel"><div class="ph"><h3>In this look</h3><span class="lab">3 pieces</span></div>${panels}</aside></div></div>`;
  const act=$('[data-actors]',this);L.slice(0,N).forEach((l,i)=>{const c=$('.model[data-i="'+i+'"]',act).cloneNode(true);c.dataset.i=i+N;c.setAttribute('aria-hidden','true');$$('img',c).forEach(x=>x.loading='lazy');act.append(c)});
-},
+}
 init(){
  const $s=this,stage=$('[data-stage]',this),bodies=$$('.model',this);let index=0,target=0,cur=rm?0:-1.15,vel=0,W=0,H=0,mh=500,playing=false,engaged=false,hover=false,dragging=false,zoomed=false,timer,raf=0,last=0,unit=200;
  $$('img',this).forEach(im=>{const ok=()=>im.classList.add('ok');im.decode?im.decode().then(ok,()=>im.naturalWidth&&ok()):(im.onload=ok)});
  const mobile=()=>innerWidth<750;
- const measure=()=>{const hh=$('.site-header').offsetHeight;$s.style.setProperty('--fh',(mobile()?innerHeight*1.09:Math.max(380,innerHeight-hh))+'px');
+ const measure=()=>{const _h=$('.site-header');const hh=_h?_h.offsetHeight:0;$s.style.setProperty('--fh',(mobile()?innerHeight*1.09:Math.max(380,innerHeight-hh))+'px');
   const r=stage.getBoundingClientRect();W=r.width;H=r.height;mh=Math.max(200,Math.round((H-52)/1.08));stage.style.setProperty('--mh',mh+'px');unit=Math.max(mobile()?90:120,.3*W);render()};
  const render=()=>{const R=(mobile()?.72:.62)*W,Pp=(mobile()?1.9:1.65)*W,floor=H-34,hor=.36*H,step=2*Math.PI/TOT,fs=1.08;
   bodies.forEach((b,a)=>{let f=((a-cur)*step)%(2*Math.PI);if(f>Math.PI)f-=2*Math.PI;if(f<=-Math.PI)f+=2*Math.PI;
