@@ -95,11 +95,27 @@ dialog{margin:auto;border:1px solid #d9d9d9;background:#fff;color:#151413;paddin
 .bundle{padding:10px 20px 16px;border:0}.brow{display:none}.cta .add2,.cta .done{display:none}.cta .m{display:inline}.complete .cta .m{display:none}.lbs{inset:72px 16px 40px}.lbtop{padding:16px 12px 0 20px}}
 @media(min-width:750px) and (max-width:1099px){.grid{grid-template-columns:minmax(0,1fr) 380px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* STYLE-ONLY MODE: hide nav, bag, shopping - keep JS intact so page still renders */
+.site-header{display:none!important}
+#bag-dialog{display:none!important}
+#bag-status{display:none!important}
+.add{display:none!important}
+.picker{display:none!important}
+.bundle{display:none!important}
+.cta{display:none!important}
+
 </style></head><body>
-<noscript><p style='padding:20px;text-align:center'>This runway needs JavaScript to load the looks.</p></noscript>
-<main><runway-section id="runway" class="rw rw--popup" data-speed="5000" data-autoplay="true"></runway-section></main>
-
-
+<header class="site-header shopify-section-group-header-group">
+<a href="./" class="brand" aria-label="Runway home"><img src="https://reel-ref-try-the-look.vercel.app/assets/nike-logo.svg" width="68" height="24" alt="Nike"></a>
+<nav aria-label="Main navigation"><a href="./">Home</a><a href="#" target="_blank" rel="noopener noreferrer">Nike Orbit</a><a href="#" target="_blank" rel="noopener noreferrer">Hand Rail Pro</a><a href="./" aria-current="page">Runway</a></nav>
+<button id="open-bag" aria-label="Open styling bag"><svg width="22" height="24" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2"/></svg><span data-cart-count>0</span></button>
+</header><noscript><p style='padding:20px;text-align:center'>This runway needs JavaScript to load the looks.</p></noscript>
+<main><runway-section id="Runway-template--28035983671601__the_runway_wdM8BG" class="rw rw--popup" data-speed="5000" data-autoplay="true"></runway-section></main>
+<dialog id="bag-dialog"><div class="bh"><h2>Your styling bag</h2><button id="close-bag" aria-label="Close styling bag">×</button></div>
+<p class="bn2">A local outfit shortlist. No payment or order is collected here. Open a piece on the original demo to continue.</p>
+<div id="bag-items"></div><p id="bag-total"></p><button id="export-bag">Download outfit shortlist</button></dialog>
+<div id="bag-status" role="status" aria-live="polite"></div>
 <script>
 const A='https://reel-ref-try-the-look.vercel.app/assets/',S='#';
 const shoe=[40,41,42,43,44,45,46],app=['S','M','L','XL'],V='Nike';
@@ -126,9 +142,19 @@ const mod=(a,n)=>((a%n)+n)%n,money=n=>'$'+n.toFixed(2);
 const KEY='runway-styling-bag-v3';let bag=[];
 try{bag=(JSON.parse(localStorage.getItem(KEY))||[]).filter(e=>Number.isSafeInteger(e.id)&&e.quantity>=1&&e.quantity<=20).slice(0,50)}catch(e){}
 const vmap={};Object.entries(P).forEach(([k,p])=>p.ids.forEach((id,j)=>vmap[id]={k,size:p.s[j]}));
-let toastT;const toast=t=>{};b.textContent=t;b.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>b.classList.remove('on'),2500)};
-function save(){return;/* shopping removed */ if(false){try{localStorage.setItem(KEY,JSON.stringify(bag))}catch(e){}$$('[data-cart-count]').forEach(c=>c.textContent=bag.reduce((a,e)=>a+e.quantity,0));renderBag()}
-function addBag(items){return} function renderBag(){return}
+let toastT;const toast=t=>{const b=$('#bag-status');b.textContent=t;b.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>b.classList.remove('on'),2500)};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(bag))}catch(e){}$$('[data-cart-count]').forEach(c=>c.textContent=bag.reduce((a,e)=>a+e.quantity,0));renderBag()}
+function addBag(items){for(const it of items){if(!vmap[it.id])throw Error('Please choose an available size.');const e=bag.find(x=>x.id===it.id);if(e)e.quantity=Math.min(20,e.quantity+1);else bag.push({id:it.id,quantity:1})}save();toast(items.length>1?'Look saved to your styling bag':'Piece saved to your styling bag')}
+function renderBag(){const box=$('#bag-items');box.innerHTML='';if(!bag.length)box.innerHTML='<p class="bn2">Your styling bag is empty. Choose a size beside a piece to save it.</p>';
+ let tot=0;bag.forEach(e=>{const m=vmap[e.id],p=P[m.k];tot+=p.p*e.quantity;const r=document.createElement('div');r.className='row';
+ r.innerHTML=`<img src="${A+p.i}.webp" alt="${p.n}"><div><h3>${p.n}</h3><p>Size ${m.size} · Quantity ${e.quantity} · ${money(p.p)}</p><a href="${S+p.u}" target="_blank" rel="noopener noreferrer">View original piece ↗</a></div><button aria-label="Remove ${p.n}">×</button>`;
+ r.querySelector('button').onclick=()=>{bag=bag.filter(x=>x!==e);save()};box.append(r)});
+ $('#bag-total').textContent=bag.length?'Reference subtotal '+money(tot):'';$('#export-bag').disabled=!bag.length}
+$('#open-bag').onclick=()=>{renderBag();$('#bag-dialog').showModal()};$('#close-bag').onclick=()=>$('#bag-dialog').close();
+$('#bag-dialog').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.currentTarget.close()});
+$('#export-bag').onclick=()=>{const lines=bag.map(e=>{const m=vmap[e.id],p=P[m.k];return`${p.n} · Size ${m.size} · Quantity ${e.quantity}\n${S+p.u}`});
+ const t=['RUNWAY — STYLING SHORTLIST','Reference prices; no order or payment has been placed.','',...lines].join('\n\n');
+ const u=URL.createObjectURL(new Blob([t],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='runway-outfit-shortlist.txt';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
 /* ---- section ---- */
 class RunwaySection extends HTMLElement{
 connectedCallback(){this.build();this.init()}
@@ -136,10 +162,12 @@ img(l,lazy){const m=A+'model-'+l.m+'-640.webp';return`<img onerror="this.style.o
 build(){
  const ticks=L.map((l,i)=>`<button class="tick" data-tick="${i}" aria-current="${i==0}" aria-label="Look ${i+1}: ${l.n}"><span class="bar"></span><span class="tl">0${i+1}<span class="tn">&nbsp;&nbsp;${l.n}</span></span></button>`).join('');
  const actors=L.map((l,i)=>`<div class="model" data-i="${i}"><span class="shadow"></span><div class="fig">${this.img(l)}<button class="hit" data-go="${i}" aria-label="Look ${i+1}: ${l.n}" tabindex="-1"></button></div></div>`).join('');
- const panels=L.map((l,i)=>{const rows=l.it.map((id,j)=>{const p=P[id],n=j+1,pid=`look-${l.k}-${n}`;
-  return`<li class="item" data-card="${n}" style="--i:${n}" data-id="${id}">${l.tag&&j==1?'<span class="tag">New</span>':''}<span class="media"><img src="${A+p.i}.webp" width="400" height="${p.h}" loading="lazy" decoding="async" alt=""><span class="num">${n}</span></span>
-  <div class="info"><span class="type">${p.v}</span><span class="name">${p.n}</span><span class="price"><span>${money(p.p)}</span></span></div></li>`}).join('');
-  return`<div class="lp${i==0?' in':''}" data-panel="${i}" ${i?'hidden':''}><ul class="items" role="list">${rows}</ul></div>`}).join('');
+ const panels=L.map((l,i)=>{const rows=l.it.map((id,j)=>{const p=P[id],n=j+1,pid=`Picker-template--28035983671601__the_runway_wdM8BG-look_${l.k}-${n}`;
+  return`<li class="item" data-card="${n}" style="--i:${n}" data-id="${id}">${l.tag&&j==1?'<span class="tag">New</span>':''}<a class="media" href="${S+p.u}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="${A+p.i}.webp" width="400" height="${p.h}" loading="lazy" decoding="async" alt=""><span class="num">${n}</span></a>
+  <div class="info"><span class="type">${p.v}</span><a class="name" href="${S+p.u}" target="_blank" rel="noopener noreferrer">${p.n}</a><span class="price"><span>${money(p.p)}</span></span></div>
+  <button class="add" data-add aria-expanded="false" aria-controls="${pid}" aria-label="Add to bag: ${p.n}"><svg class="pl" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 4v16M4 12h16"/></svg><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12.5l5 5L19.5 7"/></svg></button></li>`}).join('');
+  return`<div class="lp${i==0?' in':''}" data-panel="${i}" ${i?'hidden':''}><ul class="items" role="list">${rows}</ul><div class="bundle"><p class="msg" data-msg role="status" aria-live="polite" hidden></p><div class="brow"><div><span class="bt">Complete the look</span><span class="bn">Bundle all 3 and save 10%</span></div><div class="bp"><s>$547.00</s><strong>$492.30</strong></div></div>
+  <button class="cta" data-all><span class="add2">Add full look to bag</span><span class="m">Add full look — $492.30</span><span class="done">Full look in your bag</span></button></div></div>`}).join('');
  this.innerHTML=`<div class="sticky"><div class="grid"><div class="left"><div class="head"><h2 class="title">Try the Look.</h2><p class="sub">Six looks, styled head to toe. Tap a pin to see the piece.</p><span class="sr" aria-live="polite" aria-atomic="true" data-live></span></div>
  <div class="stage" data-stage tabindex="0" role="region" aria-roledescription="carousel" aria-label="Try the Look. — use arrow keys or swipe to change look"><div data-actors style="position:absolute;inset:0">${actors}</div></div>
  <div class="controls"><button class="icon p" data-prev aria-label="Previous look"><svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M25 7H1M7 1L1 7l6 6"/></svg></button>
