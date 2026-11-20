@@ -97,7 +97,6 @@ dialog{margin:auto;border:1px solid #d9d9d9;background:#fff;color:#151413;paddin
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* STYLE-ONLY MODE: hide nav, bag, shopping - keep JS intact so page still renders */
-.site-header{display:none!important}
 #bag-dialog{display:none!important}
 #bag-status{display:none!important}
 .add{display:none!important}
@@ -105,13 +104,42 @@ dialog{margin:auto;border:1px solid #d9d9d9;background:#fff;color:#151413;paddin
 .bundle{display:none!important}
 .cta{display:none!important}
 
+
+/* --- Added: navigation + below-gallery page --- */
+.site-header{height:72px;padding:0 28px;display:flex;align-items:center;gap:24px;border-bottom:1px solid #e4e4e4;background:#fff;position:sticky;top:0;z-index:100}
+.brand{font:700 18px Helvetica,Arial,sans-serif;letter-spacing:-.02em}
+.brand span{font-weight:400;color:#666}
+.site-header nav{margin-left:auto;display:flex;gap:22px;font:600 13px Helvetica,Arial,sans-serif}
+.site-header nav a{padding:10px 2px}
+.site-header nav a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:640px){.site-header{padding:0 16px;gap:12px}.site-header nav{gap:12px;font-size:12px}.brand span{display:none}}
+.below{max-width:1100px;margin:0 auto;padding:64px 28px 80px}
+.below h2{font-size:36px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px}
+.below p.lead{font-size:15px;line-height:1.7;color:#555;max-width:62ch;margin:0 0 32px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid #e4e4e4;border-radius:14px;padding:22px}
+.card h3{margin:0 0 8px;font-size:16px}
+.card p{margin:0;font-size:13px;line-height:1.6;color:#555}
+@media(max-width:750px){.cards{grid-template-columns:1fr}.below{padding:48px 20px 64px}}
+.page-footer{border-top:1px solid #e4e4e4;padding:28px;text-align:center;font-size:12px;color:#888}
+
 </style></head><body>
-<header class="site-header shopify-section-group-header-group">
-<a href="./" class="brand" aria-label="Runway home"><img src="https://reel-ref-try-the-look.vercel.app/assets/nike-logo.svg" width="68" height="24" alt="Nike"></a>
-<nav aria-label="Main navigation"><a href="./">Home</a><a href="#" target="_blank" rel="noopener noreferrer">Nike Orbit</a><a href="#" target="_blank" rel="noopener noreferrer">Hand Rail Pro</a><a href="./" aria-current="page">Runway</a></nav>
-<button id="open-bag" aria-label="Open styling bag"><svg width="22" height="24" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2"/></svg><span data-cart-count>0</span></button>
+<header class="site-header">
+<a href="#top" class="brand">OHB <span>Collections</span></a>
+<nav aria-label="Main navigation"><a href="#top">Home</a><a href="#looks">Looks</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 </header><noscript><p style='padding:20px;text-align:center'>This runway needs JavaScript to load the looks.</p></noscript>
-<main><runway-section id="Runway-template--28035983671601__the_runway_wdM8BG" class="rw rw--popup" data-speed="5000" data-autoplay="true"></runway-section></main>
+<main id="top"><div id="looks"><runway-section id="Runway-template--28035983671601__the_runway_wdM8BG" class="rw rw--popup" data-speed="5000" data-autoplay="true"></runway-section></div>
+<section class="below" id="about">
+<h2>About this collection</h2>
+<p class="lead">Six looks, styled head to toe. This page is just the style reference — no shop, no checkout. Use it to see how the looks sit together, then make them your own.</p>
+<div class="cards">
+<div class="card"><h3>01 — The City Edit</h3><p>Everyday pieces that still read as a statement. Clean, confident, easy to wear.</p></div>
+<div class="card"><h3>02 — Gallery Opening</h3><p>Sharper, more put-together. For when you want to walk in and be noticed.</p></div>
+<div class="card"><h3>03 — Studio Day</h3><p>Relaxed but intentional. Comfort first, style still on purpose.</p></div>
+</div>
+</section>
+<footer class="page-footer" id="contact"><p>OHB Collections — One Wall. One Statement. &nbsp;|&nbsp; Contact: hello@ohbcollections.example</p></footer>
+</main>
 <dialog id="bag-dialog"><div class="bh"><h2>Your styling bag</h2><button id="close-bag" aria-label="Close styling bag">×</button></div>
 <p class="bn2">A local outfit shortlist. No payment or order is collected here. Open a piece on the original demo to continue.</p>
 <div id="bag-items"></div><p id="bag-total"></p><button id="export-bag">Download outfit shortlist</button></dialog>
