@@ -1,1 +1,69 @@
-collection 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OHB Collection | Fragrances & Beauty</title>
+<meta name="description" content="OHB Collection: fragrances and beauty products made to help you smell good, feel confident and show up as you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F7F3EC;--ink:#0A0A0A;--gold:#C5A86A;--gold-dark:#9B7F45;--gold-light:#EAD9A9;--paper:#FFFDF8;--muted:#6B655A}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3,p,ul{margin:0}ul{list-style:none;padding:0}a{color:inherit;text-decoration:none}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}.eyebrow{letter-spacing:.24em;text-transform:uppercase;font-size:.68rem;font-weight:800;color:var(--gold)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.announce{background:#0A0A0A;color:var(--gold);overflow:hidden;white-space:nowrap;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.announce-track{display:inline-flex;padding:10px 0;animation:scroll-a 30s linear infinite}
+@keyframes scroll-a{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:40;background:#F7F3EC;border-bottom:1px solid rgba(10,10,10,.1)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand-name{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:22px;text-transform:lowercase}
+.brand-labs{margin-top:5px;font-size:9px;font-weight:800;letter-spacing:.42em;color:var(--gold-dark);text-align:center;padding-left:.42em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 24px;font-size:14px;font-weight:800}
+.btn-gold{background:var(--gold);color:#171204}.btn-ghost{border:1px solid rgba(255,255,255,.7);color:#fff;font-weight:700}.btn-ink{background:#0A0A0A;color:#fff}
+.hero{background:#121110;color:#fff}.hero-inner{max-width:1180px;margin:0 auto;padding:64px 20px 72px}
+.hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(3rem,8vw,6rem);line-height:.9;margin-top:20px}
+.hero h1 em{display:block;color:var(--gold-light);font-style:italic}
+.hero p.lead{margin-top:24px;max-width:36rem;font-size:17px;color:#D4D4D8}
+.hero .btns{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.chip{border-radius:18px;padding:14px 18px;font-size:14px;font-weight:700;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28)}
+.sec{padding:64px 0}.sec-head h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.8rem);line-height:.95;margin-top:12px}
+.sec-head p.copy{margin-top:16px;color:var(--muted);font-size:17px}.bg-dark{background:linear-gradient(135deg,#1A1A1A,#000);color:#fff}.bg-dark p.copy{color:#D8D2C7}
+.cards{margin-top:40px;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#FFFDF8;color:#0A0A0A;border:1px solid rgba(10,10,10,.1);border-radius:28px;padding:30px}
+.card .no{font-family:"Cormorant Garamond",Georgia,serif;font-size:3rem;line-height:1;color:var(--gold)}
+.card h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:2rem;line-height:1;margin-top:28px}
+.card p{margin-top:12px;color:#6B655A}
+.order-card{margin:40px auto 0;max-width:460px;border-radius:28px;border:1px solid rgba(10,10,10,.1);background:#FFFDF8;color:#0A0A0A;padding:28px;text-align:center}
+.order-card h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:2rem;margin-top:8px}
+.order-card ul{margin:16px 0 24px;text-align:left}.order-card li{padding:5px 0 5px 22px;color:#6B655A;position:relative}
+.order-card li::before{content:"✦";position:absolute;left:0;color:var(--gold-dark)}
+.faq{margin-top:40px;border-top:1px solid rgba(10,10,10,.13);border-bottom:1px solid rgba(10,10,10,.13)}
+.faq details{border-top:1px solid rgba(10,10,10,.13)}.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;padding:20px 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.6rem;font-weight:500;list-style:none}
+.faq p{padding-bottom:22px;color:var(--muted)}
+.about-block{max-width:1180px;margin:0 auto;border-radius:32px;background:#0A0A0A;color:#fff;padding:48px 24px;text-align:center}
+.about-block h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2.4rem,6vw,4.5rem);line-height:.95;margin-top:16px}
+.about-block p.body{margin:20px auto 0;max-width:46rem;color:#A1A1AA;font-size:17px;line-height:1.8}
+footer{background:#0A0A0A;color:#fff;padding:56px 20px 32px;text-align:center}
+.f-tag{margin:12px auto 0;max-width:360px;font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;font-style:italic;color:#E8E0D0}
+.contact-lines{margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.contact-lines a{font-size:15px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="announce"><div class="announce-track"><span>OHB COLLECTION • FRAGRANCES &amp; BEAUTY • SMELL GOOD. FEEL CONFIDENT. SHOW UP AS YOU. •&nbsp;&nbsp;</span><span>OHB COLLECTION • FRAGRANCES &amp; BEAUTY • SMELL GOOD. FEEL CONFIDENT. SHOW UP AS YOU. •&nbsp;&nbsp;</span></div></div>
+<header><div class="wrap nav"><div><div class="brand-name">one hundred billions</div><div class="brand-labs">COLLECTION</div></div><a class="btn btn-ink" href="#order">Shop</a></div></header>
+<main>
+<section class="hero"><div class="hero-inner"><p class="eyebrow">OHB Collection · Fragrances &amp; Beauty</p><h1>Smell good. Feel confident.<em>Show up as you.</em></h1><p class="lead">Fragrances and beauty products made to help you smell good, feel confident and show up as you.</p><div class="btns"><a class="btn btn-gold" href="#order">Shop the Collection &rarr;</a><a class="btn btn-ghost" href="#collection">Explore Fragrances</a></div><div class="chips"><span class="chip">✦ Signature Fragrances</span><span class="chip">✦ Beauty Essentials</span><span class="chip">✦ Made to Show Up As You</span></div></div></section>
+<section id="collection" class="sec"><div class="wrap"><div class="sec-head"><p class="eyebrow">In the Collection</p><h2>What is in the Collection</h2><p class="copy">Fragrances and beauty, made simple.</p></div><div class="cards"><div class="card"><span class="no">01</span><h3>Signature Fragrances</h3><p>Fragrances made to help you smell good and feel confident, every day.</p></div><div class="card"><span class="no">02</span><h3>Beauty Essentials</h3><p>Everyday beauty essentials to help you look and feel your best.</p></div><div class="card"><span class="no">03</span><h3>Everyday Confidence</h3><p>Simple rituals that help you show up as you, wherever you go.</p></div></div></div></section>
+<section class="sec bg-dark"><div class="wrap"><div class="sec-head"><p class="eyebrow">How to Choose</p><h2>Discover. Try. Choose. Show up.</h2><p class="copy">Four simple steps, from curious to confident.</p></div><div class="cards"><div class="card"><span class="no">01</span><h3>Discover</h3><p>Browse the Collection and find what fits you.</p></div><div class="card"><span class="no">02</span><h3>Try</h3><p>Ask us on WhatsApp what suits your style.</p></div><div class="card"><span class="no">03</span><h3>Choose</h3><p>Pick your fragrance or beauty essential.</p></div><div class="card"><span class="no">04</span><h3>Show Up</h3><p>Smell good, feel confident, show up as you.</p></div></div></div></section>
+<section id="order" class="sec"><div class="wrap"><div class="sec-head" style="text-align:center"><p class="eyebrow">Order</p><h2>Get your Collection</h2><p class="copy">Order through WhatsApp and we will confirm price, delivery and availability.</p></div><article class="order-card"><p class="eyebrow">OHB Collection</p><h3>Fragrances &amp; Beauty</h3><ul><li>Fragrances &amp; beauty products</li><li>Order on WhatsApp</li><li>Delivery &amp; availability confirmed on WhatsApp</li></ul><a class="btn btn-ink" style="width:100%" href="https://wa.me/27626716857?text=Hello%20OHB%20Collection%2C%20I%20am%20interested%20in%20your%20fragrances%20and%20beauty%20products." target="_blank" rel="noopener">Order on WhatsApp</a></article></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><p class="eyebrow">Good to know</p><h2>A few quick answers.</h2></div><div class="faq"><details><summary>Who is it for?</summary><p>Anyone who wants to smell good, feel confident and show up as themselves.</p></details><details><summary>How do I order?</summary><p>Order on WhatsApp and we will confirm price, delivery and availability.</p></details><details><summary>Do you deliver?</summary><p>Yes. Delivery is confirmed on WhatsApp when you order.</p></details></div></div></section>
+<section style="padding:0 20px 64px"><div class="about-block"><p class="eyebrow">About</p><h2>OHB Collection</h2><p class="body">OHB Collection is fragrances and beauty products made to help you smell good, feel confident and show up as you. Part of One Hundred Billions - LABS.</p></div></section>
+</main>
+<footer><p class="f-tag">In a world of 1s and 0s, we think in Billions.</p><div class="contact-lines"><a href="tel:+27626716857">062 671 6857</a><a href="mailto:onehundredbillions-labs@gmail.co.za">onehundredbillions-labs@gmail.co.za</a></div><div style="margin-top:28px"><a class="btn btn-gold" href="#order">Order on WhatsApp</a></div><p style="margin-top:40px;font-size:12px;color:#71717A">OHB Collection is a product of One Hundred Billions - LABS · South Africa</p></footer>
+</body>
+</html>
