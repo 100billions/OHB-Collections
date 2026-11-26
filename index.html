@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OHB Collection | Fragrances & Beauty</title>
+<meta name="description" content="OHB Collection: fragrances and beauty with its own signature. Soft, warm, unforgettable.">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* OHB COLLECTION SIGNATURE - NOT A CLONE: blush + rose-gold + deep plum, soft luxury */
+:root{--blush:#F9EDE8;--blush2:#F3DAD3;--rose:#C87F7A;--rosegold:#D8A7A0;--plum:#2A1218;--plum2:#4A1E2A;--cream:#FFF9F5;--gold:#C9A86A;--muted:#7A5A5A}
+*{box-sizing:border-box}body{margin:0;background:var(--blush);color:var(--plum);font-family:Manrope,system-ui,sans-serif;line-height:1.7}
+h1,h2,h3,p,ul{margin:0}ul{list-style:none;padding:0}a{color:inherit;text-decoration:none}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:.66rem;font-weight:800;color:var(--rose)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.announce{background:var(--plum);color:#F3DAD3;overflow:hidden;white-space:nowrap;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.announce-track{display:inline-flex;padding:11px 0;animation:scroll-a 32s linear infinite}
+@keyframes scroll-a{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:40;background:rgba(255,249,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,18,24,.1)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand-name{font-family:Italiana,serif;font-size:26px;letter-spacing:.04em}
+.brand-labs{margin-top:2px;font-size:9px;font-weight:800;letter-spacing:.48em;color:var(--rose);text-align:center;padding-left:.48em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:15px 26px;font-size:14px;font-weight:800}
+.btn-plum{background:var(--plum);color:#fff}.btn-rose{background:var(--rose);color:#fff}.btn-ghost{border:1px solid rgba(255,255,255,.8);color:#fff;font-weight:700}
+.hero{background:linear-gradient(180deg,#FFF9F5 0%, #F1E9E2 55%, #E8DDD6 100%);color:var(--plum);border-bottom-left-radius:48px;border-bottom-right-radius:48px;overflow:hidden}
+.hero-inner{max-width:1180px;margin:0 auto;padding:56px 20px 64px;display:grid;gap:36px;grid-template-columns:1.05fr .95fr;align-items:center}
+@media(max-width:760px){.hero-inner{grid-template-columns:1fr}.hero-inner{padding-top:36px}}
+.hero h1{font-family:Italiana,serif;font-weight:400;font-size:clamp(3.2rem,8vw,6.2rem);line-height:.92;margin-top:20px;letter-spacing:.01em}
+.hero h1 em{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:var(--rose);font-size:.92em}
+.hero p.lead{margin-top:24px;max-width:36rem;font-size:17px;color:#6B4A4A}
+.hero .btns{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.hero img{width:100%;border-radius:32px 32px 32px 120px;display:block;object-fit:cover;aspect-ratio:4/3;box-shadow:0 24px 60px rgba(42,18,24,.18)}
+.moods{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}.mood{border-radius:999px;padding:10px 18px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(200,127,122,.4)}
+.sec{padding:64px 0}.sec-head h2{font-family:Italiana,serif;font-weight:400;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;margin-top:12px}
+.sec-head h2 em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--rose)}
+.sec-head p.copy{margin-top:16px;color:var(--muted);font-size:17px}
+.bg-plum{background:linear-gradient(160deg,#2A1218,#4A1E2A);color:#fff;border-radius:40px;margin:0 12px}.bg-plum p.copy{color:#E8CFCF}
+.cards{margin-top:40px;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#FFF9F5;color:var(--plum);border:1px solid rgba(200,127,122,.25);border-radius:28px;padding:28px}
+.card img{width:100%;border-radius:18px 18px 18px 64px;display:block;object-fit:cover;aspect-ratio:4/3;margin-bottom:20px}
+.card .no{font-family:Italiana,serif;font-size:2.6rem;line-height:1;color:var(--rose)}
+.card h3{font-family:Italiana,serif;font-weight:400;font-size:1.9rem;line-height:1.05;margin-top:12px}
+.card p{margin-top:12px;color:var(--muted)}
+.signature{max-width:1180px;margin:0 auto;border-radius:40px;background:#FFF9F5;border:1px solid rgba(200,127,122,.3);padding:40px 24px;text-align:center}
+.signature h2{font-family:Italiana,serif;font-size:clamp(2.4rem,6vw,4.2rem);line-height:.95;font-weight:400}
+.signature h2 em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--rose)}
+.signature p{margin:18px auto 0;max-width:42rem;color:var(--muted)}
+.order-card{margin:40px auto 0;max-width:480px;border-radius:32px;border:1px solid rgba(200,127,122,.35);background:#FFF9F5;color:var(--plum);padding:30px;text-align:center;box-shadow:0 20px 50px rgba(42,18,24,.1)}
+.order-card h3{font-family:Italiana,serif;font-weight:400;font-size:2.2rem;margin-top:8px}
+.order-card ul{margin:16px 0 24px;text-align:left}.order-card li{padding:5px 0 5px 22px;color:var(--muted);position:relative}
+.order-card li::before{content:"\2726";position:absolute;left:0;color:var(--rose)}
+.faq{margin-top:40px;border-top:1px solid rgba(42,18,24,.12);border-bottom:1px solid rgba(42,18,24,.12)}
+.faq details{border-top:1px solid rgba(42,18,24,.12)}.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;padding:20px 0;font-family:Italiana,serif;font-size:1.7rem;font-weight:400;list-style:none}
+.faq p{padding-bottom:22px;color:var(--muted)}
+footer{background:var(--plum);color:#fff;padding:56px 20px 32px;text-align:center;border-top-left-radius:40px;border-top-right-radius:40px}
+.f-tag{margin:12px auto 0;max-width:380px;font-family:"Cormorant Garamond",serif;font-size:19px;font-style:italic;color:#F3DAD3}
+.contact-lines{margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.contact-lines a{font-size:15px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="announce"><div class="announce-track"><span>OHB COLLECTION - A SCENT THAT STAYS WITH YOU - FRAGRANCES &amp; BEAUTY -&nbsp;&nbsp;</span><span>OHB COLLECTION - A SCENT THAT STAYS WITH YOU - FRAGRANCES &amp; BEAUTY -&nbsp;&nbsp;</span></div></div>
+<header><div class="wrap nav"><div><div class="brand-name">one hundred billions</div><div class="brand-labs">COLLECTION</div></div><a class="btn btn-plum" href="#order">Shop</a></div></header>
+<main>
+<section class="hero"><div class="hero-inner"><div><p class="eyebrow">OHB Collection - Its own signature</p><h1>Own the room,<em>then leave a trace.</em></h1><p class="lead">Balanced for everyone. Strong where it needs to be, soft where it matters. Collection is fragrances and beauty with its own signature - for him, for her, for you.</p><div class="btns"><a class="btn btn-rose" href="#order">Shop the Collection</a><a class="btn btn-plum" href="#moods">Find your mood</a></div><div class="moods"><span class="mood">Bold</span><span class="mood">Warm</span><span class="mood">Fresh</span><span class="mood">Soft</span></div></div><img src="ohb-hero.jpg" alt="Three OHB Collection fragrance bottles in amber, blush and gold"></div></section>
+<section id="moods" class="sec"><div class="wrap"><div class="sec-head"><p class="eyebrow">Choose by mood, not by product</p><h2>How do you want <em>to feel?</em></h2><p class="copy">Collection is about mood first. Pick the feeling, we help you find the scent.</p></div><div class="cards"><div class="card"><span class="no">Warm</span><h3>Warm &amp; Close</h3><p>Soft, warm scents for evenings, dates, and quiet confidence.</p></div><div class="card"><span class="no">Fresh</span><h3>Fresh &amp; Clean</h3><p>Clean, fresh scents for a new day, work, and church.</p></div><div class="card"><span class="no">Bold</span><h3>Bold &amp; Seen</h3><p>Bold scents for showing up, standing out, and being remembered.</p></div></div></div></section>
+<section id="collection" class="sec bg-plum"><div class="wrap" style="padding:20px 0"><div class="sec-head"><p class="eyebrow">In the Collection</p><h2>Two worlds, <em>one signature.</em></h2><p class="copy">Fragrances and beauty, held together by one feeling: you, but unforgettable.</p></div><div class="cards"><div class="card"><img src="ohb-signature.jpg" alt="OHB Collection signature amber fragrance bottle with gold cap"><span class="no">01</span><h3>Signature Fragrances</h3><p>Fragrances made to help you smell good and feel confident, every day.</p></div><div class="card"><img src="ohb-beauty.jpg" alt="OHB Collection beauty essentials flat lay"><span class="no">02</span><h3>Beauty Essentials</h3><p>Everyday beauty essentials to help you look and feel your best.</p></div><div class="card"><span class="no">03</span><h3>The Ritual</h3><p>Spray. Breathe. Walk in. That is the whole ritual.</p></div></div></div></section>
+
+<section id="him" class="sec" style="background:#141414;color:#fff;border-radius:40px;margin:0 12px;padding:64px 0"><div class="wrap"><div class="sec-head"><p class="eyebrow" style="color:#C9A86A">For Him - Masculine</p><h2 style="font-family:Italiana,serif">Strong. Clean. <em style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:#C9A86A">Unmistakable.</em></h2><p class="copy" style="color:#CFCFCF">Not soft. Not sweet. Built for presence. Amber, wood, and clean power.</p></div><div class="cards"><div class="card" style="background:#1E1E1E;color:#fff;border-color:#333"><img src="ohb-him.jpg" alt="OHB Collection masculine amber fragrance bottle with black cap on dark stone" style="border-radius:12px"><span class="no" style="color:#C9A86A">HIM</span><h3 style="color:#fff">Signature For Him</h3><p style="color:#B5B5B5">Bold, amber and woody. The scent that walks in before you speak.</p></div><div class="card" style="background:#1E1E1E;color:#fff;border-color:#333"><span class="no" style="color:#C9A86A">01</span><h3 style="color:#fff">Bold</h3><p style="color:#B5B5B5">For work, for evenings, for showing up and being taken seriously.</p></div><div class="card" style="background:#1E1E1E;color:#fff;border-color:#333"><span class="no" style="color:#C9A86A">02</span><h3>Clean</h3><p style="color:#B5B5B5">Fresh, clean, sharp. No fuss, no sweetness, just clean power.</p></div></div></div></section>
+<section id="her" class="sec" style="background:linear-gradient(180deg,#F9EDE8,#F3DAD3);border-radius:40px;margin:20px 12px 0;padding:64px 0"><div class="wrap"><div class="sec-head"><p class="eyebrow">For Her - Fully Feminine</p><h2 style="font-family:Italiana,serif">Soft. Warm. <em style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:#C87F7A">Fully feminine.</em></h2><p class="copy">Here we go fully feminine. Blush, rose, soft light. This is her world.</p></div><div class="cards"><div class="card"><img src="ohb-beauty.jpg" alt="OHB Collection beauty essentials for her, blush and gold" style="border-radius:18px 18px 18px 64px"><span class="no">HER</span><h3>Beauty For Her</h3><p>Blush, glow, and care. Beauty made to feel soft and luxurious.</p></div><div class="card"><img src="ohb-signature.jpg" alt="OHB Collection feminine signature fragrance, amber bottle with blush rose" style="border-radius:18px 18px 18px 64px"><span class="no">01</span><h3>Signature For Her</h3><p>Soft, warm, floral. The scent that stays with you after you leave.</p></div><div class="card"><span class="no">02</span><h3>The Ritual For Her</h3><p>Spray. Glow. Walk in. Soft on the outside, unforgettable after.</p></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="signature"><p class="eyebrow">The Collection Signature</p><h2>Soft on the outside, <em>unforgettable after.</em></h2><p>Home Tech protects your home. Labs builds the future. Collection is different - it is about how you enter a room, and how people remember you after you leave.</p></div></div></section>
+<section id="order" class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head" style="text-align:center"><p class="eyebrow">Order</p><h2>Get your Collection</h2><p class="copy">Order through WhatsApp and we will confirm price, delivery and availability.</p></div><article class="order-card"><p class="eyebrow">OHB Collection</p><h3>Fragrances &amp; Beauty</h3><ul><li>Fragrances &amp; beauty products</li><li>Order on WhatsApp</li><li>Delivery &amp; availability confirmed on WhatsApp</li></ul><a class="btn btn-plum" style="width:100%" href="https://wa.me/27626716857?text=Hello%20OHB%20Collection%2C%20I%20am%20interested%20in%20your%20fragrances%20and%20beauty%20products." target="_blank" rel="noopener">Order on WhatsApp</a></article></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><p class="eyebrow">Good to know</p><h2>A few quick answers.</h2></div><div class="faq"><details><summary>Who is it for?</summary><p>Anyone who wants to smell good, feel confident and show up as themselves.</p></details><details><summary>How do I order?</summary><p>Order on WhatsApp and we will confirm price, delivery and availability.</p></details><details><summary>Do you deliver?</summary><p>Yes. Delivery is confirmed on WhatsApp when you order.</p></details></div></div></section>
+</main>
+<footer><p class="f-tag">In a world of 1s and 0s, we think in Billions.</p><div class="contact-lines"><a href="tel:+27626716857">062 671 6857</a><a href="mailto:onehundredbillions-labs@gmail.co.za">onehundredbillions-labs@gmail.co.za</a></div><div style="margin-top:28px"><a class="btn btn-rose" href="#order">Order on WhatsApp</a></div><p style="margin-top:40px;font-size:12px;color:#C9A0A0">OHB Collection is a product of One Hundred Billions - LABS - South Africa</p></footer>
+</body>
+</html>
